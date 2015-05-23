@@ -89,7 +89,7 @@ all.data[, activity := mapvalues(all.data$activity, from = activity_labels$id, t
 ###           (long form)        ###
 ####################################
 
-melted.data <- melt(all.data, id=c("subject", "activity"))
+melted.data <- melt(all.data, id = c("subject", "activity"))
 tidy.data <- ddply(melted.data, c("subject", "activity", "variable"), summarise, average = mean(value))
 
 ####################################
